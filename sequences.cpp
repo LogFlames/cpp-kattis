@@ -44,6 +44,19 @@ typedef vector<vector<string>> vvs;
 typedef priority_queue<int> pqi;
 typedef priority_queue<ll> pql;
 
+/*
+2^(antal ? till vänster om) * ((antal hopp till höger - antal fasta ettor) * (antal ? till höger) - antal ettor i alla binära tall med längd av antal ?) - summera för varje 1 och ?
+
+l = 1
+n | a
+1   1
+2   4
+3   12
+4   32
+
+antal ettor_n = antal ettor_(n-1) * 2 + 2 ^ (n - 1)
+ */
+
 void fast() {
     ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
 }
