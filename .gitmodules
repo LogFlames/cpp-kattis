@@ -1,0 +1,3 @@
+[submodule "competitive_programming"]
+	path = competitive_programming
+	url = https://github.com/LogFlames/competitive_programming

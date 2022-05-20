@@ -62,8 +62,8 @@ void join(vi& points, int a, int b) {
     int ar = root(points, a);
     int br = root(points, b);
 
-    points[a] = min(ar, br);
-    points[b] = min(ar, br);
+    points[ar] = min(ar, br);
+    points[br] = min(ar, br);
 }
 
 bool same(vi& points, int a, int b) {
