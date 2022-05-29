@@ -69,9 +69,10 @@ int solve(int n) {
 
     string s = to_string(n);
 
-    int in = 0;
-    for (int i = 10; i < n; i *= 10)
+    int in = sz(s);
+    for (int i = 10; i <= n; i *= 10)
     {
+        in--;
         if (s[in] == '0') {
             continue;
         }
@@ -80,7 +81,6 @@ int solve(int n) {
         int b = solve(n / i);
 
         amin(mo, a + b);
-        in++;
     }
 
     for (int i = 2; i * i <= n; i++) {
@@ -92,7 +92,7 @@ int solve(int n) {
         }
     }
 
-    rep(i,1,n / 2) {
+    rep(i,1,n / 2 + 1) {
         int a = solve(i);
         int b = solve(n - i);
 
@@ -118,9 +118,28 @@ int main() {
     dp[9] = 6;
     dp[10] = 7;
 
+    /*
     int n;
     cin >> n;
     prt(solve(n));
+    */
+
+    cout << "Solving..." << endl;
+    solve(100000);
+
+    cout << "Writing python file..." << endl;
+    ofstream py_file("1sforall.py");
+
+    py_file << "a = '";
+    rep(i,1,100001) {
+        py_file << (char)(dp[i] + 65);
+    }
+
+    py_file << "'" << endl;
+    py_file << "print(ord(a[int(input()) - 1]) - 65)" << endl;
+    py_file.close();
+    cout << "Python file written" << endl;
+
 
     return 0;
 }
