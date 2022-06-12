@@ -23,7 +23,7 @@ using namespace std;
 #define prt(a) cout << a << endl
 #define gtz(a, b) ((a) > 0 ? (b) : 0)
 #define amin(a, b) a = min((a), (b))
-#define amax(a, b) b = max((a), (b))
+#define amax(a, b) a = max((a), (b))
 #define pb push_back
 #define un_map unordered_map
 #define mmap multimap
@@ -108,15 +108,6 @@ int main() {
 
     dp[0] = 100001;
     dp[1] = 1;
-    dp[2] = 2;
-    dp[3] = 3;
-    dp[4] = 4;
-    dp[5] = 5;
-    dp[6] = 5;
-    dp[7] = 7;
-    dp[8] = 6;
-    dp[9] = 6;
-    dp[10] = 7;
 
     /*
     int n;
@@ -139,7 +130,6 @@ int main() {
     py_file << "print(ord(a[int(input()) - 1]) - 65)" << endl;
     py_file.close();
     cout << "Python file written" << endl;
-
 
     return 0;
 }
