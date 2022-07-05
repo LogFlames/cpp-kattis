@@ -54,6 +54,12 @@ typedef vector<vector<string>> vvs;
 typedef priority_queue<int> pqi;
 typedef priority_queue<ll> pql;
 
+struct Node {
+    char data;
+    Node* next;
+    Node* prev;
+};
+
 void fast() {
     ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
 }
@@ -65,24 +71,45 @@ void solve() {
 int main() {
     fast();
 
-    string s,n("");
-    int c = 0;
+    string s;
     getline(cin, s);
+
+    Node* current = new Node();
+    current->data = 0;
+    current->next = NULL;
+    current->prev = NULL;
 
     rep(i,0,sz(s)) {
         if (s[i] == 'B') {
-            n.erase(--c,1);
+            if (current->next) {
+                current->next->prev = current->prev;
+            }
+            current->prev->next = current->next;
+            current = current->prev;
         } else if (s[i] == 'L') {
-            c--;
+            current = current->prev;
         } else if (s[i] == 'R') {
-            c++;
+            current = current->next;
         } else {
-            n.insert(n.begin()+c, s[i]);
-            c++;
+            // Insert
+            Node* n = new Node();
+            n->data = s[i];
+            if (current->next) {
+                n->next = current->next;
+                current->next->prev = n;
+            } else {
+                n->next = NULL;
+            }
+            current->next = n;
+            n->prev = current;
+
+            current = n;
         }
     }
 
-    cout << n << endl;
+    while (current->prev != NULL) { current = current->prev; };
+    while ((current = current->next)) { cout << current->data; };
+    cout << endl;
 
     return 0;
 }
