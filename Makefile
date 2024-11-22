@@ -6,9 +6,14 @@ all:
 
 %:
 	$(CC) $(FLAGS) $*.cpp -o $*.elf
-	@[ -f $*.elf ] && \
-		[ -f "indata/$*/in.txt" ] && \
-		./$*.elf < indata/$*/in.txt || \
+	@[ -d indata/$* ] && \
+		find indata/$* -name 'in*.txt' | \
+		while read f; do \
+			echo "Testing $$f"; \
+			[ -f "$$f" ] && \
+				./$*.elf < "$$f" || \
+				true; \
+		done || \
 		true
 
 .PHONY: clean
