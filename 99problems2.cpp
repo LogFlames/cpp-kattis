@@ -109,7 +109,7 @@ int find_i(vi& a, int trees, int am) {
     return i - trees;
 }
 
-int lower_bound(vi& a, int trees, int d, map<int,int> uncompress, int al, int ar) {
+int lower_bound(vi& a, int trees, int d, un_map<int,int>& uncompress, int al, int ar) {
     while (al < ar) {
         int am = (al + ar) / 2;
         int i = find_i(a, trees, am);
@@ -121,7 +121,7 @@ int lower_bound(vi& a, int trees, int d, map<int,int> uncompress, int al, int ar
     return al;
 }
 
-int upper_bound(vi& a, int trees, int d, map<int,int> uncompress, int al, int ar) {
+int upper_bound(vi& a, int trees, int d, un_map<int,int>& uncompress, int al, int ar) {
     while (al < ar) {
         int am = (al + ar) / 2;
         int i = find_i(a, trees, am);
@@ -141,8 +141,8 @@ void solve() {
 
     sort(all(N));
 
-    map<int, int> compress;
-    map<int, int> uncompress;
+    un_map<int, int> compress;
+    un_map<int, int> uncompress;
     int a = 0;
     rep(i, 0, n) {
         if (compress.count(N[i])) continue;
