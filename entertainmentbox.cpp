@@ -29,15 +29,15 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 typedef vector<int> vi;
-typedef vector<vector<int>> vvi;
+typedef vector<vector<int> > vvi;
 typedef vector<ll> vl;
-typedef vector<vector<ll>> vvl;
+typedef vector<vector<ll> > vvl;
 typedef vector<bool> vb;
-typedef vector<vector<bool>> vvb;
-typedef vector<pair<int, int>> vpii;
+typedef vector<vector<bool> > vvb;
+typedef vector<pair<int, int> > vpii;
 typedef vector<pair<ll, ll>> vpll;
 typedef vector<string> vs;
-typedef vector<vector<string>> vvs;
+typedef vector<vector<string> > vvs;
 
 void fast() {
     ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);

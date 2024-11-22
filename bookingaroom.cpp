@@ -16,12 +16,12 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pl;
 typedef vector<int> vi;
-typedef vector<vector<int>> vvi;
+typedef vector<vector<int> > vvi;
 typedef vector<long> vl;
-typedef vector<vector<long>> vvl;
+typedef vector<vector<long> > vvl;
 typedef vector<bool> vb;
 typedef vector<bool> vvb;
-typedef vector<pair<int, int>> vpii;
+typedef vector<pair<int, int> > vpii;
 
 void fast() {
     ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
