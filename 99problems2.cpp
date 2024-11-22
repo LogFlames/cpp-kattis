@@ -144,9 +144,8 @@ void solve() {
     map<int, int> compress;
     map<int, int> uncompress;
     int a = 0;
-    compress[N[0]] = 0;
-    rep(i, 1, n) {
-        if (compress[N[i]]) continue;
+    rep(i, 0, n) {
+        if (compress.count(N[i])) continue;
         compress[N[i]] = a;
         uncompress[a] = N[i];
         a++;
