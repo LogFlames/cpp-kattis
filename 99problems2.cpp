@@ -167,10 +167,10 @@ void solve() {
         if (T == 1) { // discard problems strictly harder than
             int i = upper_bound(tree, trees, D, uncompress, 0, tree[1]);
             if (i == tree[1]) {
-                cout << -1 << endl;
+                cout << -1 << "\n";
             } else {
                 int ii = find_i(tree, trees, i);
-                cout << uncompress[ii] << endl;
+                cout << uncompress[ii] << "\n";
                 update(tree, trees, ii, tree[ii + trees] - 1);
                 // remove
             }
@@ -179,15 +179,15 @@ void solve() {
             int ii = find_i(tree, trees, i);
 
             if (i < tree[1] && uncompress[ii] == D) {
-                cout << uncompress[ii] << endl;
+                cout << uncompress[ii] << "\n";
                 update(tree, trees, ii, tree[ii + trees] - 1);
                 // remove
             } else {
                 if (i == 0) {
-                    cout << -1 << endl;
+                    cout << -1 << "\n";
                 } else {
                     int ii = find_i(tree, trees, i - 1);
-                    cout << uncompress[ii] << endl;
+                    cout << uncompress[ii] << "\n";
                     update(tree, trees, ii, tree[ii + trees] - 1);
                     // remove
                 }
