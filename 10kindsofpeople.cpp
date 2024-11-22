@@ -38,7 +38,7 @@ typedef vector<vector<ll> > vvl;
 typedef vector<bool> vb;
 typedef vector<vector<bool> > vvb;
 typedef vector<pair<int, int> > vpii;
-typedef vector<pair<ll, ll>> vpll;
+typedef vector<pair<ll, ll> > vpll;
 typedef vector<string> vs;
 typedef vector<vector<string> > vvs;
 typedef priority_queue<int> pqi;
